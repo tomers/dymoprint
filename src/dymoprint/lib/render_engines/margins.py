@@ -104,4 +104,8 @@ class MarginsRenderEngine(RenderEngine):
         bitmap.paste(
             payload_bitmap, box=(round(horizontal_offset_px), round(vertical_offset_px))
         )
-        return bitmap
+        meta = {
+            "horizontal_offset_px": horizontal_offset_px,
+            "vertical_offset_px": vertical_offset_px,
+        }
+        return bitmap, meta

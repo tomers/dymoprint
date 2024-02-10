@@ -187,7 +187,7 @@ class QDymoLabelList(QListWidget):
             min_width_px=mm_to_px(self.min_label_width_mm),
         )
         try:
-            bitmap = render_engine.render(self.render_context)
+            bitmap, _ = render_engine.render(self.render_context)
         except BaseException as err:  # noqa: BLE001
             crash_msg_box(self, "Render Engine Failed!", err)
             bitmap = EmptyRenderEngine().render(self.render_context)
