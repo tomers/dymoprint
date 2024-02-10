@@ -309,6 +309,7 @@ def run():
         background_color="white",
         foreground_color="black",
         height_px=dymo_labeler.height_px,
+        preview_show_margins=False,
     )
 
     # print or show the label
