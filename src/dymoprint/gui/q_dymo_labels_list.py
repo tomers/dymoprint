@@ -60,6 +60,7 @@ class QDymoLabelList(QListWidget):
             current render context and emits the corresponding signals.
         contextMenuEvent(self, event): Overrides the default context menu event to
             add or delete label widgets.
+
     """
 
     renderPrintPreviewSignal = QtCore.pyqtSignal(
@@ -99,6 +100,7 @@ class QDymoLabelList(QListWidget):
         Args:
         ----
             e (QDropEvent): The drop event.
+
         """
         super().dropEvent(e)
         self.render_label()
@@ -120,6 +122,7 @@ class QDymoLabelList(QListWidget):
             min_label_width_mm: minimum label width [mm]
             render_context (RenderContext): The new render context to use.
             justify: justification [center,left,right]
+
         """
         self.dymo_labeler = dymo_labeler
         self.h_margin_mm = h_margin_mm
@@ -204,6 +207,7 @@ class QDymoLabelList(QListWidget):
         Args:
         ----
             event (QContextMenuEvent): The context menu event.
+
         """
         contextMenu = QMenu(self)
         add_text: Optional[QAction] = contextMenu.addAction("Add Text")
